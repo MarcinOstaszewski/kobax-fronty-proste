@@ -1,0 +1,355 @@
+<!--<Deject>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FORMULARZ NA FRONTY MEBLOWE PROSTE</title>
+  <link rel="icon" href="./assets/favicon.png">
+  <link rel="stylesheet" href="./styles/normalize.css">
+  <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+
+  <!-- <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script> -->
+<!--</Deject>-->
+  <section class="page-a4">
+    <!-- inject:styles -->
+    <header>
+      <div class="info-by-receiver pointer-events-none">
+        <label for="date-of-receive">Data przyjęcia:</label>
+        <input id="date-of-receive" name="date-of-receive" class="control-cell bottom-dotted w-25mm" type="text">
+        <label for="date-of-receipt">Data odbioru:</label>
+        <input id="date-of-receipt" name="date-of-receipt" class="control-cell bottom-dotted w-25mm" type="text">
+        <label for="advance-payment">Zaliczka:</label>
+        <input id="advance-payment" name="advance-payment" class="control-cell bottom-dotted w-25mm" type="number">
+        <label for="client-number"><strong>NR KLIENTA:</strong></label>
+        <input id="client-number" name="client-number" class="control-cell bottom-dotted w-25mm" type="number">
+      </div>
+      <div class="align-center flex-column">
+        <h4 class="order-heading">
+          <label for="order-number">FORMULARZ NA FRONTY MEBLOWE PROSTE NR</label>
+          <input id="order-number" name="order-number" type="text" class="control-cell w-40mm bottom-dotted pointer-events-none">
+        </h4>
+      </div>
+      <strong class="visible-on-hover"> Tę część formularza wypełnia przyjmujący </strong>
+    </header>
+
+    <main class="">
+      <form id="fronty-proste">
+        <table id="top-table" class="top-table">
+          <tr>
+            <td class="col-2 title-cell"><label for="article">ARTYKUŁ</label></td>
+            <td class="col-4">
+              <input id="article" name="article" class="control-cell" type="text" min="0" max="999" required>
+            </td>
+            <td class="col-2 title-cell"><label for="thickness">GRUBOŚĆ<i class="text-xs">(mm)</i></label></td>
+            <td colspan="2" class="col-4">
+              <input id="thickness" name="thickness" class="control-cell" type="text" required>
+            </td>
+          </tr>
+          <tr>
+            <td class="title-cell"><label for="color">KOLOR <i>(folia, lakier)</i></label></td>
+            <td class="display-flex border-none">
+              <select id="color" name="color" class="control-cell col-6 border-right" required>
+                <option value="">proszę wybrać</option>
+                <option value="folia">FOLIA</option>
+                <option value="lakier">LAKIER</option>
+              </select>
+              <input id="color-symbol" name="color-symbol" class="control-cell col-6 border-left" type="text" required>
+            </td>
+            <td rowspan="2" class="title-cell">SPOSÓB DOSTAWY</td>
+            <td class="col-3 title-cell"><label for="shipment">WYSYŁKA</label></td>
+            <td class="col-1 align-center">
+              <input id="shipment" name="delivery" class="form-check-input" type="radio" value="shipment" required>
+            </td>
+          </tr>
+          <tr>
+            <td class="title-cell"><label for="veneer">OKLEINA <i>(symbol)</i></label></td>
+            <td>
+              <input id="veneer" name="veneer" class="control-cell" type="text" required>
+            </td>
+            <td class="title-cell"><label for="personal-collection">ODBIÓR OSOBISTY</label></td>
+            <td class="align-center">
+              <input id="personal-collection" name="delivery" class="form-check-input" type="radio" value="personal-collection" required>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" class="title-cell">
+              <label for="patine">PATYNA <i>(brak, jednolita[PJ], stara[PS], jednolita ciemne rogi [PJCR])</i></label>
+            </td>
+            <td colspan="3">
+              <div class="display-flex">
+                <select id="patine" name="patine" class="control-cell border-right col-8" required>
+                  <option value="brak">BRAK</option>
+                  <option value="jednolita">JEDNOLITA</option>
+                  <option value="stara">STARA</option>
+                  <option value="jednolita-ciemne-rogi">JEDNOLITA CIEMNE ROGI</option>
+                </select>
+                <select id="patine-color" name="patine-color" class="control-cell col-4">
+                  <option value=""> </option>
+                  <option value="bialy">biały</option>
+                  <option value="czarny">czarny</option>
+                  <option value="brazowy">brązowy</option>
+                  <option value="popielaty">popielaty</option>
+                  <option value="zloty">złoty</option>
+                  <option value="srebrny">srebrny</option>
+                  <option value="miedziany">miedziany</option>
+                </select>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" class="title-cell"><label for="lacquer">LAKIER</label></td>
+            <td colspan="3">
+              <select id="lacquer" name="lacquer" class="control-cell" required>
+                <option value="brak">BRAK</option>
+                <option value="mat">MAT</option>
+                <option value="mat-strukturalny">MAT STRUKTURALNY</option>
+                <option value="polysk">POŁYSK</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+
+        <div class="bottom-container">
+          <div class="bottom-table-legend">
+            <div class="flex-column">
+              <small>
+                Wymiary proszę podawać w milimetrach [mm]
+              </small>
+              <small>
+                W rubryce rodzaj należy wpisać czy jest to witryna, pilaster, blenda, kowbojki, winiarka, listwa wieńcząca, szuflada.
+              </small>
+            </div>
+            <div class="display-inline no-print">
+              <button id="zoom-in" class="form-button text-sm mr-05">Powiększ (+)</button>
+              <button id="zoom-out" class="form-button text-sm"no-print >Pomniejsz (-)</button>
+            </div>
+          </div>
+
+          <div class="bottom-tables-container"></div>
+
+          <table class="orderer-table text-sm">
+            <tr>
+              <td colspan="4" class="align-center text-bold">ZAMAWIAJĄCY</td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="col-2"><label for="name-surname">Nazwa<br />Imię i nazwisko<sup>&nbsp;*</sup></label></td>
+              <td rowspan="2" class="col-4 p-0">
+                <textarea id="name-surname" name="name-surname"class="control-cell" type="text" required rows="5"></textarea>
+              </td>
+              <td class="col-2 h-6mm"><label for="nip">NIP</label></td>
+              <td class="col-4 p-0">
+                <input id="nip" name="nip" class="control-cell" type="number" required>
+              </td>
+            </tr>
+            <tr>
+              <td class="h-6mm"><label for="phone">Nr tel.<sup>&nbsp;*</sup></label></td>
+              <td class="p-0">
+                <input id="phone" name="phone" class="control-cell" type="number" required>
+              </td>
+            </tr>
+            <tr>
+              <td rowspan="2"><label for="address">Adres<sup>&nbsp;*</sup></label></td>
+              <td rowspan="2" class="p-0">
+                <textarea id="address" name="address" class="control-cell" type="text" required rows="5"></textarea>
+              </td>
+              <td rowspan="2" class="h-6mm"><label for="email">E-mail<sup>&nbsp;*</sup></label></td>
+              <td rowspan="2" class="p-0">
+                <input id="email" name="email" class="control-cell h-12mm" type="email" required>
+              </td>
+            </tr>
+          </table>
+        </div>
+        
+        <label id="height-label" class="hidden">Wysokość</label>
+        <label id="width-label" class="hidden">Szerokość</label>
+        <label id="quantity-label" class="hidden">Ilość</label>
+        <label id="kind-label" class="hidden">Rodzaj</label>
+        <label id="display-label" class="hidden">Rodzaj witryny</label>
+        <label id="vertical-label" class="hidden">Pion</label>
+        <label id="hirizontal-label" class="hidden">Poziom</label>
+      </form>
+    </main>
+
+    <footer>
+      <div class="signatures">
+        <div class="flex-column align-center">
+          <input id="orderer-signature" name="orderer-signature" class="control-cell bottom-dotted w-40mm" type="text">
+          <span class="text-sm">( podpis zamawiającego )</span>
+        </div>
+        <button id="print-page" name="print-page" class="form-button default-button no-print">WYDRUKUJ</button>
+        <!-- <button id="capture" class="form-button default-button no-print" type="button">OBRAZEK</button> -->
+        <button id="send-order" name="send-order" class="form-button default-button no-print" type="submit">WYŚLIJ</button>
+        <div class="flex-column align-center">
+          <input id="receipient-signature" name="receipient-signature" class="control-cell bottom-dotted w-40mm pointer-events-none" type="text">
+          <span class="text-sm">( podpis przyjmującego )</span>
+        </div>
+      </div>
+      <div class="footnotes">
+        <div>
+          <div class="display-flex justify-between text-sm">
+            <div>
+              <div>Za błędne wypełnienie formularza odpowiedzialność ponosi zamawiający</div>
+              <div>Złożenie zamówienia jest równoznaczne z zapoznaniem się z warunkami gwarancji i reklamacji firmy KOBAX</div>
+            </div>
+            <div><sup>*&nbsp;</sup>pola obowiązkowe do uzupełnienia</div>
+          </div>
+        </div>
+        <div class="align-right pt-02">
+          <small>Zakład Handlowo-Produkcyjny „KOBAX” Pająk Krzysztof | Zebrzydowice 289A, 34-130 Kalwaria Zebrzydowska</small><br />
+          <small>NIP 551-000-42-29 | <a href="mailto:zakupy@kobax.pl" >zakupy@kobax.pl</a> | <a href="www.kobax.pl">www.kobax.pl</a> | tel. +48 33 876 70 83, +48 604 152 240</small>
+        </div>
+      </div>
+    </footer>
+  </section>
+  
+
+  <template id="bottom-table-header" class="hidden">
+    <table class="bottom-table">
+      <tbody>
+        <tr>
+          <th colspan="6" rowspan="2" class="border-none text-warning p-02" id="warning-text">
+            <div class="text-sm">!!UWAGA!!</div>
+            <div class="text-xs">W przypadku braku zaznaczenia kierunku ułożenia usłojenia,</div>
+            <div class="text-xs">zostanie ono wykonane wzdłuż wysokości (po pierwszym wymiarze),</div>
+            <div class="text-xs">wówczas maksymalna szerokość wynosi 1200 mm.</div>
+          </th>
+          <th class="border-none h-6mm"></th>
+        </tr>
+        <tr>
+          <th colspan="2" class="title-cell h-6mm text-sm">USŁOJENIE</th>
+        </tr>
+        <tr class="title-cell text-sm">
+          <th class="w-5mm" rowspan="2">Lp.</th>
+          <th class="w-20mm" rowspan="2">WYSOKOŚĆ</th>
+          <th class="w-20mm" rowspan="2">SZEROKOŚĆ</th>
+          <th class="w-8mm" rowspan="2">SZT.</th>
+          <th class="w-20mm" rowspan="2">RODZAJ</th>
+          <th class="w-10mm text-xs" rowspan="2">RODZAJ WITRYNY</th>
+          <th class="w-7mm align-center">&#11004;</th>
+          <th class="w-8mm align-center">&#9776;</th>
+        </tr>
+        <tr class="title-cell">
+          <th class="text-xs">PION</th>
+          <th class="text-xs">POZIOM</th>
+        </tr>
+      </tbody>
+    </table>
+  </template>
+
+  <template id="bottom-table-row">
+    <tr>
+      <td class="row-number-cell text-bold text-sm align-center"></td>
+      <td>
+        <input id="height-column" class="control-cell" type="number" min="0" max="1200" aria-describedby="height-label">
+      </td>
+      <td>
+        <input id="width-column" class="control-cell" type="number" min="0" max="1200" aria-describedby="width-label">
+      </td>
+      <td>
+        <input id="quantity-column" class="control-cell" type="number" min="0" max="500" aria-describedby="quantity-label">
+      </td>
+      <td class="add-caret-icon">
+        <select id="kind-column" class="control-cell narrow-selector">
+          <option value=""></option>
+          <option value="witryna">witryna</option>
+          <option value="pilaster">pilaster</option>
+          <option value="blenda">blenda</option>
+          <option value="kowbojki">kowbojki</option>
+          <option value="winiarka">winiarka</option>
+          <option value="listwa">listwa</option>
+          <option value="szuflada">szuflada</option>
+        </select>
+      </td>
+      <td class="add-caret-icon">
+        <select id="display-column" class="control-cell narrow-selector">
+          <option value=""></option>
+          <option value="pusta">pusta</option>
+          <option value="SZ1F">SZ1F</option>
+          <option value="SZ1L">SZ1L</option>
+          <option value="SZ2F">SZ2F</option>
+          <option value="SZ2L">SZ2L</option>
+          <option value="SZ3F">SZ3F</option>
+          <option value="SZ3L">SZ3L</option>
+          <option value="SZ4F">SZ4F</option>
+          <option value="SZ4L">SZ4L</option>
+          <option value="SZ5F">SZ5F</option>
+          <option value="SZ5L">SZ5L</option>
+          <option value="SZ6F">SZ6F</option>
+          <option value="SZ6L">SZ6L</option>
+          <option value="SZ7F">SZ7F</option>
+          <option value="SZ7L">SZ7L</option>
+          <option value="SZ8F">SZ8F</option>
+          <option value="SZ8L">SZ8L</option>
+          <option value="SZ9F">SZ9F</option>
+          <option value="SZ9L">SZ9L</option>
+          <option value="SZ10F">SZ10F</option>
+          <option value="SZ10L">SZ10L</option>
+          <option value="SZ11F">SZ11F</option>
+          <option value="SZ11L">SZ11L</option>
+          <option value="SZ12F">SZ12F</option>
+          <option value="SZ12L">SZ12L</option>
+          <option value="SZ13F">SZ13F</option>
+          <option value="SZ13L">SZ13L</option>
+          <option value="SZ14F">SZ14F</option>
+          <option value="SZ14L">SZ14L</option>
+          <option value="SZ15F">SZ15F</option>
+          <option value="SZ15L">SZ15L</option>
+          <option value="SZ16F">SZ16F</option>
+          <option value="SZ16L">SZ16L</option>
+        </select>
+      </td>
+      <td class="align-center">
+        <input id="vertical-column" class="direction-checkbox" type="checkbox" value="vertical">
+      </td>
+      <td class="align-center">
+        <input id="horizontal-column" class="direction-checkbox" type="checkbox" value="horizontal">
+      </td>
+    </tr>
+  </template>
+
+  <template id="notes-textarea">
+    <tr>
+      <td colspan="8" class="h-70mm">
+        <table class="col-12">
+          <tbody>
+            <tr>
+              <td class="border-none text-sm align-center p-01">
+                <label for="dodatkowe" class="display-block">MIEJSCE NA DODATKOWE INFORMACJE</label>
+              </td>
+            </tr>
+            <tr class="textarea">
+              <td colspan="8" class="border-none p-0">
+                </label>
+                <textarea class="control-cell h-full" rows="11" name="dodatkowe" id="dodatkowe"></textarea>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+  </template>
+
+  <dialog class="warning-dialog" id="invalid-form-warning">
+    <div class="dialog-content align-center">
+      <strong class="dialog-info">Prosimy o wypełnienie wszystkich wymaganych pól.</strong>
+      <p>Pola wymagane zostały zaznaczone kolorem czerwonym.</p>
+      <button class="form-button default-button">OK</button>
+    </div>
+  </dialog>
+
+  <dialog class="warning-dialog" id="reset-form-warning">
+    <div class="dialog-content align-center flex-column">
+      <div class="display-flex justify-end">&times;</div>
+      <strong class="dialog-info">Wyczyścić wszystkie pola formularza?</strong>
+      <button id="confirm-form-reset" class="form-button reset-button ">WYCZYŚĆ</button>
+    </div>
+  </dialog>
+  <!-- inject:scripts -->
+  <!--<Deject>-->
+
+  <script src="scripts/index.js"></script>
+</body>
+</html>
+<!--</Deject>-->
