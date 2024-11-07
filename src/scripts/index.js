@@ -23,7 +23,6 @@
   }
 
   function getMissingRequiredFieldsList(data) {
-    console.log(data);  
     const missingFieldsList = requiredFieldIds.filter(function(entry) {
       return (data.get(entry) === "" || data.get(entry) === null);
     }) || [];
@@ -85,7 +84,10 @@
           queriesString += entry + "=" + entries[entry] + "&";
         }
       }
-      window.location.href = "mailto:zakupy@kobax.pl?subject=zlecenie&body=" + window.location.href + queriesString;
+      const emailAddress = 'zakupy@kobax.pl';
+      const subject = "Formularz zamówienia";
+      const body = encodeURIComponent(window.location.href + queriesString);
+      window.location.href = "mailto:" + emailAddress + "?subject=" + subject + "&body=" + body;
     } else {
       showModal("invalid-form-warning");
     }
@@ -183,6 +185,13 @@
     });
   }
 
+  function hideVisibleOnHover() {
+    console.log("Hiding visible on hover");
+    document.querySelectorAll(".visible-on-hover").forEach(function(el) {
+      el.classList.add("hidden");
+    });
+  }
+
   function recoverQueryParams() {
     const queries = new URLSearchParams(window.location.search);
     if (queries.size) {
@@ -198,13 +207,13 @@
         }
       });
       switchToLockedForm(form);
+      hideVisibleOnHover();
     }
   }
 
   function saveFormInLocalStorage() {
     const data = getFormData();
     const entries = getFormEntries(data);
-    console.log("saving form in local storage", entries, data);
     const notEmptyEntries = {};
     for (entry in entries) {
       if (entries[entry] !== "") {
@@ -223,6 +232,10 @@
         if (element) {
           if (element.type === "checkbox") {
             element.checked = true;
+          } else if (element.type === "radio") {
+            if (element.value === entries[entry]) {
+              element.checked = true;
+            }
           } else {
             element.value = entries[entry];
           }

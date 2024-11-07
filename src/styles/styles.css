@@ -53,7 +53,7 @@ header {
   position: relative;
   margin-bottom: 0.25rem
 }
-header .visible-on-hover {
+header .visible-on-hover:not(.hidden) {
   position: absolute;
   display: block;
   right: 0;
