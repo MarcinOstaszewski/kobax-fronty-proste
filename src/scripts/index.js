@@ -3,7 +3,7 @@
   const ZOOM = "zoom";
   const DELIVERY = "delivery";
   const requiredFieldIds = ["name-surname", "email", "address", "phone", 
-    "article", "thickness", "color", DELIVERY, "color-symbol"];
+    "article", "thickness", "color", DELIVERY, "color-symbol", "zgoda-rodo"];
 
   function removeWarningOnClick(e) {
     const element = e.target;
@@ -84,8 +84,9 @@
           queriesString += entry + "=" + entries[entry] + "&";
         }
       }
+      queriesString = queriesString.replace(/ /g, "%20").replace(/\n/g, "%0A").replace(/\r/g, "%0D");
       const emailAddress = 'zakupy@kobax.pl';
-      const subject = "Formularz zamówienia";
+      const subject = "Formularz zamówienia frontów prostych";
       const body = encodeURIComponent(window.location.href + queriesString);
       window.location.href = "mailto:" + emailAddress + "?subject=" + subject + "&body=" + body;
     } else {
@@ -179,7 +180,7 @@
   function switchToLockedForm(form) {
     form.classList.add("locked");
     const warningTextCell = document.querySelectorAll(".text-warning")[1];
-    warningTextCell.innerHTML = '<small class="visible-when-locked">! FORMULARZ ZABLOKOWANY DO EDYCJI !</small>';
+    warningTextCell.innerHTML = '<strong class="visible-when-locked text-sm">FORMULARZ ZABLOKOWANY DO EDYCJI</strong>';
     document.querySelectorAll(".pointer-events-none").forEach(function(el) {
       el.classList.remove("pointer-events-none");
     });

@@ -37,7 +37,7 @@
 
     <main class="">
       <form id="fronty-proste">
-        <table id="top-table" class="top-table">
+        <table id="top-table" class="top-table border-bold">
           <tr>
             <td class="col-2 title-cell"><label for="article">ARTYKUŁ</label></td>
             <td class="col-4">
@@ -130,9 +130,9 @@
 
           <div class="bottom-tables-container"></div>
 
-          <table class="orderer-table text-sm">
+          <table class="orderer-table text-md border-bold">
             <tr>
-              <td colspan="4" class="align-center text-bold">ZAMAWIAJĄCY</td>
+              <td colspan="4" class="align-center title-cell">ZAMAWIAJĄCY</td>
             </tr>
             <tr>
               <td rowspan="2" class="col-2"><label for="name-surname">Nazwa<br />Imię i nazwisko<sup>&nbsp;*</sup></label></td>
@@ -155,9 +155,18 @@
               <td rowspan="2" class="p-0">
                 <textarea id="address" name="address" class="control-cell" type="text" required rows="5"></textarea>
               </td>
-              <td rowspan="2" class="h-6mm"><label for="email">E-mail<sup>&nbsp;*</sup></label></td>
-              <td rowspan="2" class="p-0">
-                <input id="email" name="email" class="control-cell h-12mm" type="email" required>
+              <td class="h-6mm"><label for="email">E-mail<sup>&nbsp;*</sup></label></td>
+              <td class="p-0">
+                <input id="email" name="email" class="control-cell h-6mm" type="email" required>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <div class="rodo-consent-container">
+                  <label><sup>*</sup><span>&nbsp;Wyrażam zgodę na przetwarzanie moich danych osobowych w celach związanych z realizacją zamówienia.</span>
+                    <input type="checkbox" id="zgoda-rodo" name="zgoda-rodo" class="rodo-consent">
+                  </label>
+                </div>
               </td>
             </tr>
           </table>
@@ -312,11 +321,11 @@
 
   <template id="notes-textarea">
     <tr>
-      <td colspan="8" class="h-70mm">
+      <td colspan="8">
         <table class="col-12">
           <tbody>
             <tr>
-              <td class="border-none text-sm align-center p-01">
+              <td class="border-none text-sm text-bold align-center p-01">
                 <label for="dodatkowe" class="display-block">MIEJSCE NA DODATKOWE INFORMACJE</label>
               </td>
             </tr>

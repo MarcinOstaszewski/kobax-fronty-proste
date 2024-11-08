@@ -11,6 +11,7 @@
   --kbx-bg-warning-color: #ffc;
   --kbx-bg-locked-color: #ffe;
   --kbx-white-color: #fff;
+  --kbx-font-family: 'Arimo', Arial, sans-serif;
 }
   
 /* GENERAL */
@@ -47,6 +48,10 @@ select::-ms-expand {
   padding: 0 0.1rem;
   max-width: 21cm;
   margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--kbx-font-family);
 }
 
 header {
@@ -177,9 +182,13 @@ th.border-none {
 .control-cell {
   width: 100%;
   padding: 0.2rem;
+  font-size: 12px;
   margin: 0;
   border: 0;
   background-color: var(--kbx-bg-control-color);
+}
+.locked .control-cell {
+  background-color: var(--kbx-bg-locked-color);
 }
 input, select {
   cursor: pointer;
@@ -188,7 +197,6 @@ input, select {
 .bottom-table .control-cell {
   width: 100%;
   padding: 0 0.1rem;
-  font-size: 13px;
   line-height: 21px;
 }
 
@@ -329,8 +337,12 @@ footer {
 .orderer-table textarea {
   padding: 0.3rem;
   width: 100%;
+  font-size: 12px;
   height: 12mm;
   border: none;
+}
+.orderer-table input {
+  font-size: 12px;
 }
 .orderer-table td label{
   display: flex;
@@ -344,6 +356,35 @@ footer {
 .orderer-table td sup {
   font-size: 10px;
   color: var(--kbx-text-color-warning)
+}
+
+.rodo-consent-container {
+  display: flex;
+  align-items: center;
+  margin: 2px;
+  line-height: 12px;
+}
+.rodo-consent {
+  margin: 0 6px 0 12px;
+  width: 20px;
+  height: 20px;
+}
+input[type="checkbox"].rodo-consent {
+  accent-color: var(--kbx-main-color);
+}
+input[type="checkbox"].rodo-consent.required-field-error:after {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  background-color: var(--kbx-bg-error-color);
+  border: 1px solid var(--kbx-text-color-warning);
+  border-radius: 3px;
+}
+.orderer-table .rodo-consent-container label {
+  font-size: 10px;
+  line-height: 1;
+  font-weight: normal;
 }
 
 .visible-when-locked {
