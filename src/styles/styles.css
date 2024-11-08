@@ -21,6 +21,7 @@
 
 body {
   transform-origin: 0 0;
+  line-height: 1.45;
 }
 
 td, th {
@@ -264,7 +265,7 @@ textarea.control-cell {
   display: block;
   width: 100%;
   height: 100%;
-  padding: 0.3rem 0;
+  padding: 0.1rem 0;
 }
 .title-cell i {
   font-weight: normal;

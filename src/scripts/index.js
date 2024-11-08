@@ -133,7 +133,7 @@
     
     function createTableRows(tableId, startNumber, rowsNumber, addNotes) {
       const rowTemplate = document.getElementById("bottom-table-row");
-      const tableBottom = document.getElementById(tableId);
+      const tableBottom = document.querySelector("#" + tableId + " tbody");
 
       for (let i = startNumber; i < startNumber + rowsNumber; i++) {
         const row = rowTemplate.content.cloneNode(true);
