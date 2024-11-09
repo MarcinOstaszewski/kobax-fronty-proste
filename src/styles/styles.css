@@ -48,7 +48,7 @@ select::-ms-expand {
   color: var(--kbx-text-color);
   padding: 0 0.1rem;
   max-width: 21cm;
-  margin: 0 auto;
+  margin: 0.75rem auto 0.5rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
