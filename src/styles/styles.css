@@ -156,6 +156,9 @@ input::-webkit-inner-spin-button {
   justify-content: space-between;
   width: 100%;
 }
+.bottom-tables-container table:nth-of-type(1) {
+  margin-right: 0.5rem;
+}
 
 .bottom-table {
   display: inline-table;
@@ -197,6 +200,8 @@ input, select {
 
 .bottom-table .control-cell {
   width: 100%;
+  font-size: 10px;
+  vertical-align: middle;
   padding: 0 0.1rem;
   line-height: 21px;
 }
@@ -231,6 +236,7 @@ input, select {
   width: 1.1rem;
   height: 1.1rem;
   accent-color: var(--kbx-main-color);
+  vertical-align: middle;
 }
 .bottom-table td input[type="checkbox"]:hover {
   accent-color: var(--kbx-main-lighter-color);
